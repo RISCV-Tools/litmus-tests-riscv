@@ -1,0 +1,11 @@
+RISCV MP+si3+fence.rw.rw
+{
+uint8_t x[128];
+0:x5=0x1211; 0:x6=x;
+1:x6=x;
+}
+ P0                              | P1                              ;
+ sh x5,3(x6) (* W x[3]=0x__11 *) | lb x5,4(x6) (* R x[4]=0x12__ *) ;
+             (* W x[4]=0x12__ *) | fence rw,rw                     ;
+                                 | lb x7,3(x6) (* R x[3]=0x__00 *) ;
+exists (1:x5=0x12 /\ 1:x7=0x00)

@@ -1,5 +1,5 @@
 RISCV CoWR
-"Wse PosWR Fre"
+"based on: Wse PosWR Fre"
 Generator=diyone7 (version 7.55)
 Com=Ws Fr
 Orig=Wse PosWR Fre
@@ -12,4 +12,4 @@ uint64_t x; uint64_t 1:x7;
  P0          | P1          ;
  sd x5,0(x6) | sd x5,0(x6) ;
              | ld x7,0(x6) ;
-locations [x;1:x7;]
+exists (x=2 /\ 1:x7=1)

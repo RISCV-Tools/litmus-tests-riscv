@@ -1,4 +1,4 @@
-RISCV PPOCA
+RISCV MP+fence.rw.rw+ctrl-rfi-addr
 "Fence.rw.rwdWW Rfe DpCtrldW Rfi DpAddrdR Fre"
 (* Canonical name: MP+fence.rw.rw+ctrl-rfi-addr *)
 Generator=diyone7 (version 7.55+01(dev))

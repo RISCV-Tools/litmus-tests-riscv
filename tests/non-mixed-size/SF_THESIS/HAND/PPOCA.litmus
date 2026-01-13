@@ -1,9 +1,9 @@
 RISCV PPOCA
-"Fence.w.wdWW Rfe DpCtrldW Rfi DpAddrdR Fre"
+"Fence.rw.rwdWW Rfe DpCtrldW Rfi DpAddrdR Fre"
 Generator=diyone7 (version 7.55)
 Prefetch=0:x=F,0:y=W,1:y=F,1:x=T
 Com=Rf Fr
-Orig=Fence.w.wdWW Rfe DpCtrldW Rfi DpAddrdR Fre
+Orig=Fence.rw.rwdWW Rfe DpCtrldW Rfi DpAddrdR Fre
 {
 uint64_t z; uint64_t y; uint64_t x; uint64_t 1:x11; uint64_t 1:x9; uint64_t 1:x5;
 
@@ -12,7 +12,7 @@ uint64_t z; uint64_t y; uint64_t x; uint64_t 1:x11; uint64_t 1:x9; uint64_t 1:x5
 }
  P0          | P1              ;
  sd x5,0(x6) | ld x5,0(x6)     ;
- fence w,w   | bne x5,x0,LC00  ;
+ fence rw,rw | bne x5,x0,LC00  ;
  sd x5,0(x7) | LC00:           ;
              | sd x7,0(x8)     ;
              | ld x9,0(x8)     ;

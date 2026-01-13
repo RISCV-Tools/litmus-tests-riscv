@@ -1,0 +1,15 @@
+RISCV MP+fence.rw.rw+[fr-rf]-si1
+{
+uint32_t x;
+0:x4=x;
+0:x1=0x11; 0:x2=0x12;
+1:x4=x;
+2:x4=x;
+2:x1=0x22;
+}
+
+P0                              | P1                                  | P2                              ;
+sb x1,1(x4) (* W x[1]=0x__11 *) | lb x2,2(x4)  (* R x[2]   =0x12__ *) | sb x1,2(x4) (* W x[2]=0x22__ *) ;
+fence rw,rw                     | lh x3,1(x4)  (* R x[1..2]=0x2200 *) | ;
+sb x2,2(x4) (* W x[2]=0x12__ *) |                                     | ;
+exists (1:x2=0x12 /\ 1:x3=0x2200)
