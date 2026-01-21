@@ -1,4 +1,3 @@
-/home/sflur/rems/litmus-tests-regression-machinery/tests/RISCV/non-mixed-size/RELAX/Rfi/MP+fence.rw.rw+addr-rfi-addr.litmus
 BASIC/ISA2+fence.rw.rw+addr+addr.litmus
 BASIC/ISA2+fence.rw.rws.litmus
 BASIC/LB+addrs.litmus
@@ -27,6 +26,7 @@ HAND/IRIW+addrs.litmus
 HAND/LB+fence.rw.rw+addr-po.litmus
 HAND/LB+fence.rw.rw+data-po.litmus
 HAND/MP+fence.rw.rw+addr-po.litmus
+HAND/MP+fence.rw.rw+addr-rfi-addr.litmus
 HAND/MP+fence.rw.rw+ctrlindaddr.litmus
 HAND/MP+fence.rw.rw+ctrlind.litmus
 HAND/MP+fence.rw.rw+ctrl-rfi-addr.litmus
